@@ -108,14 +108,14 @@ function select_board_info_cnt()
 
 
 // TODO : test Start
-// $arr = 
-//     array(
-//         "limit_num" =>5
-//         , "offset"    =>0
-//     );
-// $result = select_board_info_paging( $arr );
+$arr = 
+    array(
+        "limit_num" =>5
+        , "offset"    =>0
+    );
+$result = select_board_info_paging( $arr );
 
-// print_r( $result );
+print_r( $result );
 // TODO : test End
 
 

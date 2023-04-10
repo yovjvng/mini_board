@@ -9,7 +9,7 @@
     }
     else
     {
-        $page_num = 1;
+        $page_num = 1; // 첫번째 화면
     }
 
 
@@ -37,7 +37,7 @@
     // print_r( $result_cnt );
     // print_r( $max_page_num );
     // var_dump( $max_page_num );
-    // var_dump( $result_cnt );
+    var_dump( $result_cnt );
 
 
 ?>
