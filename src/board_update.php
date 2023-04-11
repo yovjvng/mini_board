@@ -54,13 +54,27 @@
             padding: 0;
             font-family: 'Times New Roman', Times, serif;
         }
+        a
+        {
+            color: inherit;
+            display: inline-block;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        a:hover
+        {
+            color: #333;
+        }
         .wrap
         {
+            /* background-image: url(./paper1.jpg); */
+            background-size: cover;
             text-align: center;
         }
         h1
         {
             text-transform: uppercase;
+            padding: 20px 0;
         }
         form{
             padding: 30px 0;
@@ -68,19 +82,17 @@
         form input
         {
             width: 400px;
+            background: transparent;
+            border: none;
+        }
+        textarea
+        {
+            background: transparent;
+            color: #333;
         }
         #contents
         {
             height: 500px;
-        }
-        a
-        {
-            text-decoration: none;
-            color: #ffffff;
-        }
-        a:hover
-        {
-            color: #333;
         }
         label
         {
@@ -123,7 +135,8 @@
             <br>
             <br>
             <label for="contents">게시글 내용 : </label>
-            <input type="text" name="board_contents"  id="contents" value="<?php echo $result_info['board_contents'] ?>">
+            <textarea name="board_contents" id="contents" value="<?php echo $result_info['board_contents'] ?>" cols="48" rows="15">
+            </textarea>
             <br>
             <br>
             <div class="btn_con">

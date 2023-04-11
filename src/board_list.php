@@ -3,6 +3,8 @@
     define( "URL_DB", DOC_ROOT."mini_board/src/common/db_common.php" );
     include_once( URL_DB );
 
+    $http_method = $_SERVER["REQUEST_METHOD"];
+
     // GET 체크
     if ( array_key_exists( "page_num", $_GET ) ) 
     {
@@ -54,6 +56,12 @@
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/search.css' rel='stylesheet'>
     <title>게시판</title>
     <style>
+    /* .clearfix::after 
+    {
+        content: '';
+        display: block;
+        clear: both;
+    } */
     *
     {
         text-align: center;
@@ -63,6 +71,8 @@
     }  
     a
     {
+        color: inherit;
+        display: inline-block;
         text-decoration: none;
         color: #333;
     }
@@ -73,52 +83,56 @@
     .main
     {
         background-image: url(./paper1.jpg);
-        /* background-repeat: no-repeat; */
         background-size: cover;
         border: 1px solid #efefef;
-        /* width: 100%; */
         height: 100%;
         margin: 10px;
         padding: 20px;
     }
-    .search
+    thead
     {
-        position: relative;
-        display: inline-block;
-        float: right;
-        margin: 10px;
+        border-bottom: 1px solid #333;
+        border-top: 1px solid #333;
     }
-    .sear
+    table
     {
-        display: inline-block;
-        width: 100px;
-        height: 25px;
+        margin-top: 80px; 
+        font-size: 20px;
     }
-    i
-    {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-    tr:hover {
+    td:hover {
         opacity: 0.7;
     }
-    .btn
-    {
-        border-radius: 25px;
-    }
-    .btn_con
-    {
-        margin: 100px 0 0;
-    }
-
-    .btn_con.btn
+    a
     {
         margin: 0 10px;
     }
-    /* a:hover
+    .nav-form{
+        margin: 150px 0 20px 0;
+    }
+    .sear_put
     {
-        background-color: #d3e7dd;
+        /* width: 100px;
+        height: 25px; */
+        background: transparent;
+    }
+    i
+    {
+        width: 50px;
+    }
+    .btn_con
+    {
+        display: inline-block;
+        /* margin: 200px 0 0; */
+        font-size: 20px;
+    }
+    .btn_con_num
+    {
+        display: inline-block;
+    }
+
+    /* .btn_con.btn
+    {
+        margin: 0 10px;
     } */
 
     </style>
@@ -126,10 +140,6 @@
 <body>
     <div class="main">
         <h1>FREE BOARD</h1>
-        <div class="search">
-        <i class="gg-search"></i>
-        <input type="text" class="sear">
-        </div>
         <!-- <table class='table table-striped'> -->
         <table class='table table-hover'>
             <thead>
@@ -155,9 +165,14 @@
 
             </tbody>
         </table>
+        <div class="nav-form">
+            <form action="search"><i class="fas fa-search"></i>
+                <input class="sear_put" type="text" placeholder="검색">
+            </form>
+        </div>
         <div class="btn_con">
-                <a href='board_list.php?page_num=1'>first</a>
-                <div class="btn">
+                <a href='board_list.php?page_num=1'>first</a>   
+                <div class="btn_con_num">
                     <?php
                         for( $i = 1; $i <= $max_page_num; $i++ )
                         {
@@ -167,7 +182,7 @@
                         }
                     ?>
                 </div>
-                <a href='board_list.php?max_page_num=<?php echo $i ?>'>end</a>
+                <a href='board_list.php?page_num=<?php echo $max_page_num ?>'>end</a>
         </div>
     </div>
 </body>
