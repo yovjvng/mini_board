@@ -1,10 +1,5 @@
-.btn
-{
-    text-decoration: none;
-   
-    
-}
-.btn_con 
-{
-    /* border: 1px solid #333; */
+a{
+    justify-content: space-between;
+    float: right;
+    background-image: url(./paper.jpg);
 }

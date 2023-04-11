@@ -60,7 +60,7 @@ function select_board_info_paging( &$param_arr )
         } 
         catch( Exception $e )
         {
-            return false;
+            return $e->getMessage();
         }
         finally
         {
@@ -93,7 +93,7 @@ function select_board_info_cnt()
         } 
         catch( Exception $e )
         {
-            return false;
+            return $e->getMessage();
         }
         finally
         {
@@ -104,21 +104,118 @@ function select_board_info_cnt()
 
 }
 
-
-
-
 // TODO : test Start
-$arr = 
-    array(
-        "limit_num" =>5
-        , "offset"    =>0
-    );
-$result = select_board_info_paging( $arr );
+// $arr = 
+//     array(
+//         "limit_num" =>5
+//         , "offset"    =>0
+//     );
+// $result = select_board_info_paging( $arr );
 
-print_r( $result );
+// print_r( $result );
 // TODO : test End
 
 
+
+// 특정 pk의 레코드 쿼리
+
+function select_board_info_no( &$param_no )
+{
+    $sql = 
+        " SELECT "
+        . " board_no "
+        . " , board_title "
+        . " , board_contents "
+        . " FROM "
+        . " board_info "
+        . " WHERE "
+        . " board_no = :board_no "
+        ;
+
+        $arr_prepare = 
+            array(
+                ":board_no"    => $param_no
+            );
+
+        $conn = null;
+        try
+        {
+            db_conn( $conn ); 
+            $stmt = $conn->prepare( $sql ); 
+            $stmt->execute( $arr_prepare );
+            $result = $stmt->fetchAll();
+        } 
+        catch( Exception $e )
+        {
+            return $e->getMessage();
+        }
+        finally
+        {
+            $conn = null;
+        }
+
+        return $result[0];
+}
+
+// TODO : test Start
+// $i = 20;
+// print_r(select_board_info_no( $i ));
+
+
+//------------------------------------------------
+// 함수명   : update_board_info_no
+// 기능     : 게시판 특정 게시글 정보 수정
+// 파라미터 : Array     &$param_arr
+// 리턴값   : INT/STFING       $result_cnt/ERRMSG
+//------------------------------------------------
+
+function update_board_info_no( &$param_arr )
+{
+    $sql = 
+        " UPDATE "
+        ." board_info "
+        ." SET "
+        ." board_title = :board_title "
+        ." , board_contents = :board_contents "
+        ." WHERE "
+        ." board_no = :board_no "
+        ;
+        $arr_prepare = 
+            array(
+                ":board_title" => $param_arr["board_title"]
+                ,":board_contents" => $param_arr["board_contents"]
+                ,":board_no" => $param_arr["board_no"]
+            );
+
+        $conn = null;
+        try
+        {
+            db_conn( $conn ); // PDO object set
+            $conn->beginTransaction(); // Transaction 시작 
+            $stmt = $conn->prepare( $sql ); // statement object 셋팅
+            $stmt->execute( $arr_prepare );  // DB request
+            $result_cnt = $stmt->rowCount(); // query 적용 recode 갯수
+            $conn->commit();
+        } 
+        catch( Exception $e )
+        {
+            $conn->rollback();
+            return $e->getMessage();
+        }
+        finally
+        {
+            $conn = null;
+        }
+
+        return $result_cnt;
+}
+    $arr = 
+        array(
+            "board_no" => 1
+            ,"board_title" => "test1"
+            ,"board_contents" => "testtest1"
+        );
+    // echo update_board_info_no( $arr );
 
 
 
