@@ -1,10 +1,175 @@
 @charset "utf-8";
-a{
-    justify-content: space-between;
-    float: right;
-    background-image: url(./paper.jpg);
-    border-bottom: 1px solid #333;
-    font-weight: bold;
-    text-align: center;
-    font-family:sc
-}
+
+/* 공통 css */
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    *
+    {
+        font-family: 'S-CoreDream-3Light';
+        margin: 0;
+        padding: 0;
+    }
+
+    a
+    {
+        color: inherit;
+        display: inline-block;
+        text-decoration: none;
+        color: #333;
+    }
+    .wrap
+    {
+        text-align: center;
+        margin: 10px;
+    }
+    .main
+    {
+        background-image: url(./paper1.jpg);
+        background-size: cover;
+        border: 1px solid #333;
+        height: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+/* board_list css */
+
+    h1
+    {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 70px;
+        border-bottom: 1px solid #333;
+        width: 500px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    thead
+    {
+        border-bottom: 1px solid #333;
+        border-top: 1px solid #333;
+    }
+    table
+    {
+        text-align: center;
+        margin-top: 80px; 
+        font-size: 18px;
+    }
+    td:hover {
+        opacity: 0.7;
+    }
+
+    a
+    {
+        margin: 0 10px;
+    }
+
+    .nav-form{
+        margin: 150px 0 20px 0;
+    }
+    .sear_put
+    {
+        background: transparent;
+    }
+    .btn_con
+    {
+        display: inline-block;
+        margin: 0 auto;
+        font-size: 17px;
+    }
+    .btn_con_num
+    {
+        display: inline-block;
+    }
+
+    /* board_update css */
+    .content_1
+    {
+        background-image: url(./paper1.jpg);
+        background-size: cover;
+        border: 1px solid #333;
+        height: 100%;
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h2
+    {
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    h3
+    {
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+        border-bottom: 1px solid #333;
+        border-top: 1px solid #333;
+        width: 300px;
+        margin: 0 auto;
+        text-transform: uppercase;
+        padding: 5px 0;
+    }
+    a:hover
+    {
+        color: #333;
+    }
+    form{
+        padding: 30px 0;
+    }
+    .content_1 input
+    {
+        width: 400px;
+        background: transparent;
+        border: none;
+    }
+    #title
+    {
+        border-bottom: 1px solid #333;
+    }
+    textarea
+    {
+        background: transparent;
+        color: #333;
+    }
+    #contents
+    {
+        /* font-size: 12px; */
+        height: 500px;
+    }
+    label
+    {
+        vertical-align: top;
+    }
+    .fa-solid
+    {
+        font-size: 2rem;
+    }
+    /* .fa-sharp
+    {
+        font-size: 2rem;
+    } */
+    /* .btn_wrap
+    {
+        display: flex;
+        width: 500px;
+        margin: 0 auto;
+    }
+    .btn_fix
+    {
+        width: 70px;
+        border-radius: 25px;
+        background-color: #333;
+        color: #ffffff;
+        margin: 0 50px;
+    }
+    .btn_fix:hover
+    {
+        background-color: #ffffff;
+        color: #333;
+    } */
