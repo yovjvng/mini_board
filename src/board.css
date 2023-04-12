@@ -4,4 +4,7 @@ a{
     float: right;
     background-image: url(./paper.jpg);
     border-bottom: 1px solid #333;
+    font-weight: bold;
+    text-align: center;
+    font-family:sc
 }

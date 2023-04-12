@@ -56,18 +56,18 @@
     <link href='https://unpkg.com/css.gg@2.0.0/icons/css/search.css' rel='stylesheet'>
     <title>게시판</title>
     <style>
-    /* .clearfix::after 
-    {
-        content: '';
-        display: block;
-        clear: both;
-    } */
+    @font-face {
+     font-family: 'S-CoreDream-3Light';
+     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+    }
     *
     {
+        font-family: 'S-CoreDream-3Light';
         text-align: center;
         margin: 0;
         padding: 0;
-        font-family: 'Times New Roman', Times, serif;
     }  
     a
     {
@@ -78,13 +78,18 @@
     }
     h1
     {
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
         font-size: 70px;
+        border-bottom: 1px solid #333;
+        width: 500px;
+        margin: 0 auto;
     }
     .main
     {
         background-image: url(./paper1.jpg);
         background-size: cover;
-        border: 1px solid #efefef;
+        border: 1px solid #333;
         height: 100%;
         margin: 10px;
         padding: 20px;
@@ -97,7 +102,7 @@
     table
     {
         margin-top: 80px; 
-        font-size: 20px;
+        font-size: 18px;
     }
     td:hover {
         opacity: 0.7;
@@ -123,7 +128,7 @@
     {
         display: inline-block;
         /* margin: 200px 0 0; */
-        font-size: 20px;
+        font-size: 17px;
     }
     .btn_con_num
     {
@@ -156,7 +161,7 @@
                 ?>
                         <tr>
                             <td><?php echo $recode["board_no"] ?></td>
-                            <td><a href="board_update.php?board_no=<?php echo $recode["board_no"] ?>"><?php echo $recode["board_title"] ?></a></td>
+                            <td><a href="board_detail.php?board_no=<?php echo $recode["board_no"] ?>"><?php echo $recode["board_title"] ?></a></td>
                             <td><?php echo $recode["board_write_date"] ?></td>
                         </tr>
                 <?php
