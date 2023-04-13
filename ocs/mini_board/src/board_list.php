@@ -1,7 +1,6 @@
 <?php
-    define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
-    define( "URL_DB", SRC_ROOT."mini_board/src/common/db_common.php" );
-    define( "URL_HEADER","board_header.php" );
+    define( "DOC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
+    define( "URL_DB", DOC_ROOT."mini_board/src/common/db_common.php" );
     include_once( URL_DB );
 
     $http_method = $_SERVER["REQUEST_METHOD"];
@@ -59,10 +58,10 @@
 </head>
 <body>
     <div class="wrap">
-    <?php include_once( URL_HEADER ); ?>
         <div class="main">
+            <button type="button">게시글 작성</button>
             <h1>FREE BOARD</h1>
-            <button type="button"><a href="board_insert.php">게시글 작성</a></button>
+            <!-- <table class='table table-striped'> -->
             <table class='table table-hover'>
                 <thead>
                     <tr>

@@ -35,23 +35,17 @@
         margin: 0 auto;
         padding: 20px;
     }
-    .home{
-        font-size: 30px;
-        float: left;
-    }
 
 /* board_list css */
 
     h1
     {
-        text-transform: uppercase;
         font-family: 'Times New Roman', Times, serif;
         font-weight: bold;
         font-size: 70px;
         border-bottom: 1px solid #333;
-        border-top: 1px solid #333;
         width: 500px;
-        margin: 20px auto;
+        margin: 0 auto;
         text-align: center;
     }
     thead

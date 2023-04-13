@@ -2,7 +2,6 @@
     // 절대 주소 넣는 대신 define 
     define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/" );
     define( "URL_DB", SRC_ROOT."common/db_common.php" );
-    define( "URL_HEADER","board_header.php" );
     include_once( URL_DB );
 
     // Request Method를 획득
@@ -56,7 +55,6 @@
 </head>
 <body>
     <div class="wrap">
-    <?php include_once( URL_HEADER ); ?>
         <div class="content_1">
             <h2>free board</h2>
             <h3>edit post</h3>
@@ -79,7 +77,7 @@
                     <!-- <i class="fa-sharp fa-light fa-wrench"></i> -->수정
                     </button>
                     <a class="trash" href='board_detail.php?board_no=<?php echo $result_info["board_no"] ?>'>
-                    cancel
+                    <i class="fa-solid fa-trash-can"></i>
                     </a>
                     <a href='board_list.php'> <button class="btn_fix" type="button"> LIST</button></a>
                 </div>
