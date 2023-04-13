@@ -19,7 +19,8 @@ $result_info = select_board_info_no( $arr_get["board_no"] );
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link rel="stylesheet" href="./board.css">
+    <link rel="stylesheet" href="./css/board.css">
+    <link rel="stylesheet" href="./css/board_detail.css">
     <title>Detail</title>
 
 </head>
@@ -31,19 +32,21 @@ $result_info = select_board_info_no( $arr_get["board_no"] );
             <h3>detail page</h3>
             <div class="contents">
                 <p>NO. <?php echo $result_info["board_no"] ?></p>
-                <p>작성일 : <?php echo $result_info["board_write_date"] ?></p>
-                <p>게시글 번호 : <?php echo $result_info["board_title"] ?></p>
-                <p>게시글 내용 : <?php echo $result_info["board_contents"] ?></p>
+                <p>DATE : <?php echo $result_info["board_write_date"] ?></p>
+                <p>TITLE : <?php echo $result_info["board_title"] ?></p>
+                <p class="con_cons">게시글 내용 : <?php echo $result_info["board_contents"] ?></p>
             </div>
-            <button type="button"><a href="board_update.php?board_no=<?php echo $result_info["board_no"] ?> ">
-            수정 
-            </a></button>
-            <a href='board_list.php'> <button class="btn_fix" type="button"> LIST</button></a>
-            <button type="button">
-                <a href="board_delete.php?board_no=<?php echo $result_info["board_no"] ?>">    
-                삭제<!-- <i class="fa-solid fa-trash-can"></i> -->
+            <div class="con_edit">
+                <a href="board_update.php?board_no=<?php echo $result_info["board_no"] ?> ">
+                    <i class="fa-solid fa-pen fa-2x"></i>
                 </a>
-            </button>
+                <a class="btn_fix" href='board_list.php'>
+                    <i class="fa-sharp fa-solid fa-list fa-2x"></i>
+                </a>
+                <a href="board_delete.php?board_no=<?php echo $result_info["board_no"] ?>">    
+                    <i class="fa-solid fa-trash-can fa-2x"></i>
+                </a>
+            </div>
         </div>
     </div>
 </body>

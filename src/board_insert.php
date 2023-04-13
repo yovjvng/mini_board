@@ -27,7 +27,9 @@ $http_method = $_SERVER["REQUEST_METHOD"];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./board.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/board.css">
+    <link rel="stylesheet" href="./css/board_insert.css">
     <title>게시글 작성</title>
 </head>
 <body>
@@ -37,25 +39,23 @@ $http_method = $_SERVER["REQUEST_METHOD"];
             <h2>free board</h2>
             <h3>write a post</h3>
             <form method="post" action="board_insert.php">
-                <!-- <label for="bno">NO. </label>
-                <input type="text" name="board_no" id="bno" value="<?php echo $result_info['board_no'] ?>" readonly>
-                <br>
-                <br> -->
-                <label for="title">TITLE : </label>
-                <input type="text" name="board_title"  id="title">
-                <br>
-                <br>
-                <label for="contents">내용 : </label>
-                <textarea class="input_contents" name="board_contents" id="contents" spellcheck="false" cols="48" rows="15" >
-                </textarea>
+                <div class="con_main">
+                    <label for="title">TITLE : </label>
+                    <input type="text" name="board_title"  id="title" required placeholder="제목" autocomplete="off">
+                    <br>
+                    <br>
+                    <label for="contents">내용 : </label>
+                    <textarea class="input_contents" name="board_contents" id="contents" spellcheck="false" cols="55" rows="15" >
+                    </textarea>
+                </div>
                 <br>
                 <br>
                 <div class="btn_wrap">
                     <button class="btn_fix" type="submit">
-                    작성
+                        <i class="fa-sharp fa-regular fa-pen-to-square fa-2x"></i>
                     </button>
                     <a href="board_list.php">
-                    취소
+                        <i class="fa-solid fa-xmark fa-2x"></i>
                     </a>
                 </div>
             </form>

@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+.content_1
+    {
+        background-image: url(../paper1.jpg);
+        background-size: cover;
+        border: 1px solid #333;
+        height: 100%;
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h2
+    {
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    h3
+    {
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+        border-bottom: 1px solid #333;
+        border-top: 1px solid #333;
+        width: 300px;
+        margin: 0 auto;
+        text-transform: uppercase;
+        padding: 5px 0;
+    }
+    a:hover
+    {
+        color: #333;
+    }
+    form{
+        padding: 30px 0;
+    }
+    .content_1 input
+    {
+        width: 400px;
+        background: transparent;
+        border: none;
+    }
+    #title
+    {
+        border-bottom: 1px solid #333;
+    }
+    textarea
+    {
+        background: transparent;
+        color: #333;
+    }
+    #contents
+    {
+        /* font-size: 12px; */
+        height: 400px;
+    }
+    label
+    {
+        vertical-align: top;
+    }
+    .fa-solid
+    {
+        font-size: 2rem;
+    }
+    .btn_wrap i
+    {
+      padding: 0 20px;
+    }
+    .btn_wrap i:hover
+    {
+      color: #ffffff;
+    }

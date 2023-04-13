@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+.content_1
+    {
+        background-image: url(../paper1.jpg);
+        background-size: cover;
+        border: 1px solid #333;
+        height: 100%;
+        width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h2
+    {
+        font-size: 50px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    h3
+    {
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+        border-bottom: 1px solid #333;
+        border-top: 1px solid #333;
+        width: 300px;
+        margin: 0 auto;
+        text-transform: uppercase;
+        padding: 5px 0;
+    }
+    .content_1 input
+    {
+        width: 400px;
+        background: transparent;
+        border: none;
+    }
+    label
+    {
+        vertical-align: top;
+    }
+    textarea
+    {
+        background: transparent;
+        color: #333;
+    }
+    .con_main
+    {
+      margin: 20px auto;
+      width: 500px;
+    }
+    .fa-solid
+    {
+      position: relative;
+      bottom: -3px;
+    }
+    .fa-solid:hover
+    {
+      color: #ffffff;
+    }
+    .btn_wrap i{
+      padding: 0 30px;
+    }

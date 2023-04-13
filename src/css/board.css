@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+/* 공통 css */
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    }
+    *
+    {
+        font-family: 'S-CoreDream-3Light';
+        margin: 0;
+        padding: 0;
+    }
+
+    a
+    {
+        color: inherit;
+        display: inline-block;
+        text-decoration: none;
+        color: #333;
+    }
+    .wrap
+    {
+        text-align: center;
+        margin: 10px;
+    }
+    .main
+    {
+        background-image: url(../paper1.jpg);
+        background-size: cover;
+        border: 1px solid #333;
+        height: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .home{
+        /* width: 500px; */
+        font-size: 20px;
+        /* float: left; */
+        margin-top: 0 auto;
+        padding: 10px;
+    }
+    button
+    {
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+    }
+    button:hover
+    {
+        color: #ffffff;
+    }
