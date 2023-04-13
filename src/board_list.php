@@ -59,10 +59,12 @@
 </head>
 <body>
     <div class="wrap">
-    <?php include_once( URL_HEADER ); ?>
         <div class="main">
+        <?php include_once( URL_HEADER ); ?>
             <h1>FREE BOARD</h1>
-            <button type="button"><a href="board_insert.php">게시글 작성</a></button>
+            <div class="insert">
+                <button calss="insert_btn" type="button"><a href="board_insert.php">게시글 작성</a></button>
+            </div>
             <table class='table table-hover'>
                 <thead>
                     <tr>

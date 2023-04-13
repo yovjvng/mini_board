@@ -32,8 +32,8 @@ $http_method = $_SERVER["REQUEST_METHOD"];
 </head>
 <body>
 <div class="wrap">
-        <?php include_once( URL_HEADER ); ?>
         <div class="content_1">
+        <?php include_once( URL_HEADER ); ?>
             <h2>free board</h2>
             <h3>write a post</h3>
             <form method="post" action="board_insert.php">

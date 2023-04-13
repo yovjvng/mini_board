@@ -25,8 +25,8 @@ $result_info = select_board_info_no( $arr_get["board_no"] );
 </head>
 <body>
     <div class="wrap">
-        <?php include_once( URL_HEADER ); ?>
         <div class="content_1">
+        <?php include_once( URL_HEADER ); ?>
             <h2>free board</h2>
             <h3>detail page</h3>
             <div class="contents">

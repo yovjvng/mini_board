@@ -56,8 +56,8 @@
 </head>
 <body>
     <div class="wrap">
-    <?php include_once( URL_HEADER ); ?>
         <div class="content_1">
+        <?php include_once( URL_HEADER ); ?>
             <h2>free board</h2>
             <h3>edit post</h3>
             <form method="post" action="board_update.php">
