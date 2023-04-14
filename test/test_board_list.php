@@ -1,6 +1,12 @@
 <?php
 
-define();
+include_once( "C:/Apache24/htdocs/mini_board/test/test_db_common.php" );
+
+$arr = array(
+        "limit_num" => 5
+        ,"offset" => 0
+);
+$result = board_list( );
 
 
 
@@ -23,11 +29,17 @@ define();
                 </tr>
             </thead>
             <tbody>
+                <?php
+                foreach ($result as $recode) {
+                ?>
                 <tr>
-                    <td><?php echo $board_no ?></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php echo $recode['board_no'] ?></td>
+                    <td><?php echo $recode['board_title'] ?></td>
+                    <td><?php echo $recode['board_write_date'] ?></td>
                 </tr>
+                <?php
+                }
+                ?>
             </tbody>
         </table>
     

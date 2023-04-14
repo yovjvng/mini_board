@@ -36,7 +36,7 @@ $result_info = select_board_info_no( $arr_get["board_no"] );
                 <p>TITLE : <?php echo $result_info["board_title"] ?></p>
                 <p class="con_cons">게시글 내용 : <?php echo $result_info["board_contents"] ?></p>
             </div>
-            <div class="con_edit">
+            <div class="btn_wrap">
                 <a href="board_update.php?board_no=<?php echo $result_info["board_no"] ?> ">
                     <i class="fa-solid fa-pen fa-2x"></i>
                 </a>

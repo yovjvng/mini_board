@@ -24,6 +24,8 @@ function db_conn( &$param_conn )
     }
 }
 
+// var_dump( db_conn() );
+
 //------------------------------------------------
 // 함수명   : board_list
 // 기능     : 게시판 리스트
@@ -33,7 +35,7 @@ function db_conn( &$param_conn )
 
 
 
-function board_list( &$param_arr )
+function board_list( )
 {
     $sql =
         " SELECT "
@@ -46,13 +48,13 @@ function board_list( &$param_arr )
         ." board_del_flg = '0' "
         ." ORDER BY "
         ." board_no DESC "
-        ." LIMIT :limit_num OFFSET :offset "
+        // ." LIMIT :limit_num OFFSET :offset "
         ;
     
     $arr_prepare = 
         array(
-            ":limit_num" => $param_arr["limit_num"]
-            , ":offset"      => $param_arr["offset"]
+            // ":limit_num" => $param_arr["limit_num"]
+            // , ":offset"      => $param_arr["offset"]
         );
 
     $conn = null;
@@ -85,3 +87,7 @@ function board_list( &$param_arr )
     // print_r( $result );
 
 ?>
+
+
+
+

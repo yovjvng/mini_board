@@ -65,9 +65,12 @@
     }
     .btn_wrap i
     {
-      padding: 0 20px;
+        width: 40px;
+        box-shadow: 1px 1px 3px 1px #a7a8aa;
+        padding: 5px;
+        margin: 0 20px;
     }
     .btn_wrap i:hover
     {
-      color: #ffffff;
+        box-shadow: 1px 1px 3px 1px #a7a8aa inset;
     }

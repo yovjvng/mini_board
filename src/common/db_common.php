@@ -322,9 +322,51 @@ function insert_board_info( &$param_arr )
 // echo insert_board_info( $arr );
 
 
+//------------------------------------------------
+// 함수명   : board_search
+// 기능     : 게시글 검색
+// 파라미터 : Array     &$param_search
+// 리턴값   : INT/STFING       $result_cnt/ERRMSG
+//------------------------------------------------
 
+function board_search( &$search_con )
+{
+    $sql =
+        " SELECT "
+        . " board_no "
+        . " , board_title "
+        . " , board_write_date "
+        ." FROM "
+        ." board_info "
+        ." WHERE "
+        ." board_del_flg = '0' "
+        ." AND board_title LIKE CONCAT('%',:search,'%') "
+        ." ORDER BY "
+        ." board_no desc "
+        ;
+    
+        $arr_prepare = array(
+            ":search" => $search_con["search"]
+        );
+        $conn = null;
+        try
+        {
+            db_conn( $conn );
+            $stmt = $conn->prepare( $sql );
+            $stmt->execute( $arr_prepare );
+            $result = $stmt->fetchAll();
+        } 
+        catch( Exception $e )
+        {
+            return $e->getMessage();
+        }
+        finally
+        {
+            $conn = null;
+        }
 
-
+        return $result;
+}
 
 
 

@@ -1,55 +1,68 @@
 <?php
-    define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/" );
-    define( "URL_DB", SRC_ROOT."mini_board/src/common/db_common.php" );
-    define( "URL_HEADER","board_header.php" );
-    include_once( URL_DB );
+define( "SRC_ROOT", $_SERVER["DOCUMENT_ROOT"]."/mini_board/src/" );
+define( "URL_DB", SRC_ROOT."common/db_common.php" );
+define( "URL_HEADER","board_header.php" );
+define( "URL_LIST","board_list.php" );
+include_once( URL_DB );
 
-    $http_method = $_SERVER["REQUEST_METHOD"];
+$http_method = $_SERVER["REQUEST_METHOD"];
 
-    // GET 체크
-    if ( array_key_exists( "page_num", $_GET ) ) 
-    {
-        $page_num = $_GET["page_num"];
-    }
-    else
-    {
-        $page_num = 1; // 첫번째 화면
-    }
+if( $http_method === "GET")
+{
+    $arr_post = $_GET;
+    $result_paging = board_search( $arr_post );
+
+}
+else
+{
+    echo "검색어가 없습니다.";
+}
+
+var_dump($_GET);
+
+// $result_paging = board_search()
+// $search_con = "제목";
+// $result = board_search( $search_con );
+
+// if( $http_method === "POST")
+// {
+//     $arr_post = $_POST;
+//     $result_info = board_search( $arr_post );
+
+// }
+// else
+// {
+//     echo "검색어가 없습니다.";
+// }
 
 
-     
 
-    // $arr_get = $_GET;
+// print_r( $result );
 
-    $limit_num = 5;
+// $searchOption = $dbConnect->real_escape_string($_POST['option']);
+// $catagory = $_GET['catgo'];
+// $search_con = $_GET['search'];
 
-    // $page_num = $arr_get["page_num"];
-    // 게시판 정보 테이블 전체 카운트 획득
-    $result_cnt = select_board_info_cnt();
 
-    // max page number
-    $max_page_num = ceil( (int)$result_cnt[0]["cnt"] / $limit_num );
+// if($param_search == '' || $param_search == null) {
+//     echo "검색어가 없습니다.";
+//     exit;
+//   }
 
-    // offset
-    $offset = ( $page_num * $limit_num ) - $limit_num;
-
-    $arr_prepare = 
-        array(
-            "limit_num" => $limit_num
-            ,"offset"   => $offset
-        );
-    $result_paging = select_board_info_paging( $arr_prepare );
-    
-    // print_r( $result_cnt );
-    // print_r( $max_page_num );
-    // var_dump( $max_page_num );
-    // var_dump( $result_cnt );
-
+//   switch($searchOption) {
+//     case 'title':
+//     case 'content':
+//     case 'tandc':
+//     case 'torc':
+//       break;
+//     default :
+//       echo "검색 옵션이 없습니다.";
+//       exit;
+//       break;
+//   }
 
 
 ?>
-
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -59,15 +72,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/board.css">
     <link rel="stylesheet" href="./css/board_list.css">
-    <title>게시판</title>
+    <title>Document</title>
 </head>
 <body>
-    <div class="wrap">
+<div class="wrap">
         <div class="main">
         <?php include_once( URL_HEADER ); ?>
             <h1>fREE BOARD</h1>
-            <div class="insert">
-                <button calss="insert_btn" type="button"><a href="board_insert.php">게시글 작성</a></button>
+            <div class="result">
+                <!-- <p><?php echo $search_con; ?> 검색결과</p> -->
             </div>
             <table class='table table-hover'>
                 <thead>
@@ -93,21 +106,24 @@
 
                 </tbody>
             </table>
-                    <div class="nav-form">
-                        <form method="get" action="board_search.php"><i class="fas fa-search"></i>
-                            <input class="sear_put" type="text" placeholder="검색">
-                        </form>
-                    </div>
+            <!-- <div class="nav-form">
+                <form method="get" action="board_search.php"><i class="fas fa-search"></i>
+                    <input class="sear_put" type="text" placeholder="검색">
+                </form>
+            </div> -->
             <div class="btn_con">
                     <a href='board_list.php?page_num=1'>first</a>   
                     <div class="btn_con_num">
                         <?php
+                        if( $result > 0 )
+                        {
                             for( $i = 1; $i <= $max_page_num; $i++ )
                             {
                         ?>       
                                 <a href='board_list.php?page_num=<?php echo $i ?>'><?php echo $i ?></a>
                         <?php
                             }
+                        }
                         ?>
                     </div>
                     <a href='board_list.php?page_num=<?php echo $max_page_num ?>'>end</a>

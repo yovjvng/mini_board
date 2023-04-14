@@ -53,10 +53,11 @@
       position: relative;
       bottom: -3px;
     }
-    .fa-solid:hover
-    {
-      color: #ffffff;
-    }
     .btn_wrap i{
-      padding: 0 30px;
+      padding: 5px;
+      box-shadow: 1px 1px 3px 1px #a7a8aa;
+      margin: 0 30px;
+    }
+    .btn_wrap i:hover{
+      box-shadow: 1px 1px 3px 1px #a7a8aa inset;
     }

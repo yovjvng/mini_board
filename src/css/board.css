@@ -48,7 +48,18 @@
         border: none;
         background-color: transparent;
     }
-    button:hover
+    .btn_wrap i
     {
-        color: #ffffff;
+        width: 40px;
+        box-shadow: 1px 1px 3px 1px #a7a8aa;
+        padding: 5px;
+        margin: 0 20px;
+    }
+    .btn_wrap i:hover
+    {
+        box-shadow: 1px 1px 3px 1px #a7a8aa inset;
+    }
+    .btn_wrap
+    {
+        padding-top: 20px;
     }

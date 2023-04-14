@@ -8,6 +8,17 @@
     // Request Method를 획득
     $http_method = $_SERVER["REQUEST_METHOD"];
 
+    if( $http_method === "POST")
+    {
+        $arr_post = $_POST;
+        $result_info = board_search( $arr_post );
+    
+    }
+    else
+    {
+        echo "검색어가 없습니다.";
+    }
+
     // GET 일때
     if( $http_method === "GET")
     {
