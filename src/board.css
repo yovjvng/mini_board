@@ -28,7 +28,7 @@
     }
     .main
     {
-        background-image: url(../paper1.jpg);
+        background-image: url(./paper1.jpg);
         background-size: cover;
         border: 1px solid #333;
         height: 100%;
@@ -42,32 +42,5 @@
         margin-top: 0 auto;
         padding: 10px;
     }
-    button
-    {
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
-    }
-    .btn_wrap i
-    {
-        width: 40px;
-        box-shadow: 1px 1px 3px 1px #a7a8aa;
-        padding: 5px;
-        margin: 0 20px;
-        border-radius: 25px;
-    }
-    .btn_wrap i:hover
-    {
-        box-shadow: 1px 1px 3px 1px #a7a8aa inset;
-    }
-    .btn_wrap
-    {
-        padding-top: 20px;
-    }
-    .form_ser
-    {
-        box-shadow: 1px 1px 3px 1px #a7a8aa;
-    }
-    .form_ser:hover{
-        box-shadow: 1px 1px 3px 1px #a7a8aa inset;
-    }
+
+
